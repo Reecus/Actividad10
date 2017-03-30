@@ -2,9 +2,10 @@
 
 Scripts para crear imagen de UDOObuntu con logotipo de bootloader modificado.
 
-Susana Aimée González Velázquez
-Kevin Márquez Vaca
-Bruno Dávila Assad
+Equipo:
+Susana Aimée González Velázquez.
+Kevin Márquez Vaca.
+Bruno Dávila Assad.
 
 ### Basado en 
 https://github.com/UDOOboard/mkudoobuntu
@@ -14,5 +15,5 @@ Para crear la imagen del UDOObuntu Desktop para UDOO Quad/Dual con el logo de bo
 
 1. Clonar este repositorio en una carpeta
 2. Posicionarse en la carpeta creada en el paso anterior.
-2. Escribir el comando ### sudo make
+2. Escribir el comando sudo make
 
