@@ -1,45 +1,18 @@
-## mkudoobuntu
-This script creates SD-card images for UDOO boards. It supports both desktop and 
-headless images. The created images are as small as possible and expanded to the 
-whole card size during the first boot.
+## Proyecto Final (Actividad)
 
-### Usage
-To debootstrap a new unnamed image, use:
+Scripts para crear imagen de UDOObuntu con logotipo de bootloader modificado.
 
-    sudo ./mkudoobuntu.sh <board> <flavour>
+Susana Aimée González Velázquez
+Kevin Márquez Vaca
+Bruno Dávila Assad
 
-Branded-release images can be generated with:
+### Basado en 
+https://github.com/UDOOboard/mkudoobuntu
 
-    sudo RELEASE="2.0 Beta6" ./mkudoobuntu.sh <board> <flavour>
+### Instrucciones
+Para crear la imagen del UDOObuntu Desktop para UDOO Quad/Dual con el logo de bootloader customizado, hay que realizar los siguientes pasos:
 
-To edit a previously debootstrapped rootfs, use:
+1. Clonar este repositorio en una carpeta
+2. Posicionarse en la carpeta creada en el paso anterior.
+2. Escribir el comando ### sudo make
 
-    sudo ./mkudoobuntu.sh <board> <operation>
-
-`<board>` can be: `udoo-qdl`, `udoo-neo`.
-
-`<operation>` can be:
- * `install`: Install a deb in rootfs from repos
- * `remove`: Remove a deb from rootfs
- * `list`: List installed pkg in rootfs
- * `reimage`: Make a new image from a modified rootfs
- * `shell`: Open an interactive shell in a rootfs
-    
-### Prerequisites
-This script has been tested on Ubuntu 15.10, 15.04 and 14.04. 
-It may work on other Debian-like system.
-
-### Supported boards
-1. UDOO Quad 
-2. UDOO Dual
-3. UDOO Neo (Basic, Extended, Full)
-
-### Misc sources
-Original work:
-https://github.com/igorpecovnik/lib 
-
-U-Boot:
-https://github.com/UDOOboard/uboot-imx
-
-Kernel:
-https://github.com/UDOOboard/linux_kernel/
