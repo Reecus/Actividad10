@@ -253,9 +253,9 @@ debootstrapfull() {
     echo -e "${GREENBOLD}done!${RST}"
   fi
   
+  source team-configs/make-custom-uboot-qdl.sh
   source include/debootstrap.sh
   source include/configure.sh
-  source team-configs/make-custom-uboot-qdl.sh
   source include/imager.sh
 }
 

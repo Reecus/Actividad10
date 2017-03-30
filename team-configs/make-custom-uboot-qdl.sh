@@ -13,6 +13,14 @@ targetfile="uboot.imx"
 
 BLUE="\e[34m"
 
+PAQUETES=( gawk wget git diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm picocom ncurses-dev lzop gcc-arm-linux-gnueabihf )
+
+echo -e "${BLUE}Installing necessary packages...${RST}" >&1 >&2
+for i in ${PAQUETES[*]}; do
+		echo -e "${BLUE}Installing ${i}...${RST}" >&1 >&2
+		apt-get install -y $i
+done
+
 echo -e "${BLUE}Removing default uboot-imx...${RST}" >&1 >&2
 rm -rf $binarydir/$targetfile
 
@@ -25,7 +33,9 @@ echo -e "${BLUE}Adding custom logo...${RST}" >&1 >&2
 cp -f $logo tools/logos/
 echo -e "${BLUE}Replacing tool's makefile..${RST}" >&1 >&2
 cp -f $customlogomk tools/
- 
+
+echo -e "${BLUE}Compiling U-Boot..${RST}" >&1 >&2
+
 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make clean
 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make udoo_qdl_defconfig
 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make -j8
